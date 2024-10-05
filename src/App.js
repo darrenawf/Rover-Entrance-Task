@@ -4,6 +4,7 @@ function App() {
     // To-Do list state
     const [tasks, setTasks] = useState([
         { text: "Type Here", completed: false },
+        { text: "Type Here", completed: false },
         { text: "Type Here", completed: false }
     ]);
 
