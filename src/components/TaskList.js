@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function App() {
+function TaskList() {
     // To-Do list state
     const [tasks, setTasks] = useState([
         { text: "Type Here", completed: false },
@@ -40,4 +40,4 @@ function App() {
     );
 }
 
-export default App;
+export default TaskList;
