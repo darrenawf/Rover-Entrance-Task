@@ -1,15 +1,42 @@
-// Import React to use JSX
-import React from 'react';
+import React, { useState } from 'react';
 
-// Define the App component
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello, World!</h1>
-      <p>Welcome to my React app.</p>
-    </div>
-  );
+    // To-Do list state
+    const [tasks, setTasks] = useState([
+        { text: "Type Here", completed: false },
+        { text: "Type Here", completed: false }
+    ]);
+
+    // Toggle task completion
+    const toggleTask = (index) => {
+        const newTasks = [...tasks];
+        newTasks[index].completed = !newTasks[index].completed;
+        setTasks(newTasks);
+    };
+
+    return (
+        <div className="App">
+            <div className="title">To-Do List</div>
+            {tasks.map((task, index) => (
+                <div className="taskList" key={index}>
+                    <div className="taskListLeft">
+                        <input className="checkbox"
+                            type="checkbox"
+                            checked={task.completed}
+                            onChange={() => toggleTask(index)}
+                        />
+                        <input className="typeBox" placeholder={task.text} />
+                    </div>
+                    <div className="taskListRight">
+                        <div className="drag-handle">
+                            <div /><div /><div />
+                        </div>
+                        <div className="x-symbol" />
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
 }
 
-// Export the App component as the default export
 export default App;

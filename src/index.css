@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  background-color: rgb(200, 200, 210);
+  margin: 0;
+}
+
+.App {
+  background-color: rgb(215, 215, 225);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 30px 10% 20px 10%;
+  height: 80vh;
+}
+
+.title{
+  font-size: 30px;
+}
+
+.taskList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.taskListLeft {
+  display: flex;
+  width: 80%;
+}
+
+.taskListRight {
+  width: 15%;
+  background-color: rgb(200, 200, 210);
+  display: flex;
+  justify-content: right;
+}
+
+.checkbox {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background-color: rgb(200, 200, 210);
+}
+
+.typeBox {
+  appearance: none;
+  width: 85%;
+  border: none;
+  background-color: inherit;
+  margin-left: 10px;
+  font-size: 16px;
+  color: black;
+}
+
+.x-symbol {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.x-symbol::before, 
+.x-symbol::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.x-symbol::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.x-symbol::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.drag-handle {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: grab;
+  margin-right: 10px
+}
+
+.drag-handle div {
+  width: 100%;
+  height: 3px;
+  background-color: black;
 }
